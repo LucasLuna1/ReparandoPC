@@ -59,62 +59,36 @@ export default function ServiciosPage() {
   return (
     <div className="section">
       <div className="container">
-        <header className="section-header">
-          <h1 className="section-title">Servicios y tipos de trabajos que realizo</h1>
+        <header className="section-header text-center mb-12">
+          <h1 className="section-title">Servicios</h1>
           <p className="section-subtitle">
-            Te explico de forma clara qué incluye cada servicio y qué puedes esperar del resultado.
-            Los valores indicados son de referencia para que tengas una idea aproximada.
+            Soluciones claras para los problemas más comunes de tu PC.
           </p>
         </header>
 
-        <div className="grid-3 mb-10">
+        <div className="grid-3 mb-12">
           {servicios.map((servicio) => (
             <article key={servicio.titulo} className="service-card">
               <h2 className="service-title">{servicio.titulo}</h2>
               <p className="service-desc">{servicio.desc}</p>
-              <p className="service-meta">{servicio.desde}</p>
-              <p className="service-meta mt-1">Modalidad: {servicio.tipo}</p>
-              <ul className="mt-3 text-xs text-slate-600 space-y-1">
-                {servicio.incluye.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
+              <div className="mt-4 pt-4 border-t border-slate-200">
+                <p className="service-meta font-semibold">{servicio.desde}</p>
+                <p className="service-meta text-xs mt-1">{servicio.tipo}</p>
+              </div>
             </article>
           ))}
         </div>
 
-        <div className="section-header">
-          <h2 className="section-title">Área de cobertura</h2>
-          <p className="section-subtitle">
-            Para problemas que se pueden resolver de forma remota utilizo herramientas seguras de
-            acceso temporal a tu equipo. Para trabajos de hardware, lo ideal es coordinar visita a
-            domicilio.
+        <div className="card text-center">
+          <h2 className="text-xl font-semibold mb-3">
+            ¿No estás seguro qué necesitas?
+          </h2>
+          <p className="text-sm text-slate-600 mb-4">
+            Cuéntame qué le pasa a tu PC y te recomiendo la mejor opción.
           </p>
-        </div>
-
-        <div className="card mb-8">
-          <ul className="text-sm text-slate-700 space-y-1">
-            {zonas.map((zona) => (
-              <li key={zona}>• {zona}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="card">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <h2 className="text-lg font-semibold mb-1">
-                ¿No estás seguro de qué servicio necesitas?
-              </h2>
-              <p className="text-sm text-slate-600">
-                Cuéntame brevemente qué le ocurre a tu PC y te recomiendo la mejor opción, sin costo
-                y sin compromiso.
-              </p>
-            </div>
-            <a href="/contacto" className="primary-button">
-              Enviar consulta ahora
-            </a>
-          </div>
+          <a href="/contacto" className="primary-button">
+            Consultar ahora
+          </a>
         </div>
       </div>
     </div>
