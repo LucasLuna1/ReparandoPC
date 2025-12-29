@@ -1,8 +1,7 @@
-import type { Metadata } from 'next';
 import './globals.css';
 import Header from './components/Header';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'ReparandoPC | Reparación de PC a domicilio',
   description:
     'Servicio profesional de reparación y optimización de computadoras a domicilio. Diagnóstico rápido, atención personalizada y soluciones claras.',
